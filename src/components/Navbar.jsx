@@ -1,13 +1,16 @@
+import { Link } from "react-router-dom";
+import "./Navbar.css";
+
 function Navbar() {
   return (
     <nav>
       <h2>PayFlow</h2>
 
       <div>
-        <a href="/">Home</a>
-        <a href="/send-money">Send Money</a>
-        <a href="/transactions">Transactions</a>
-        <a href="/profile">Profile</a>
+        <Link to="/">Home</Link>
+        <Link to="/send-money">Send Money</Link>
+        <Link to="/transactions">Transactions</Link>
+        <Link to="/profile">Profile</Link>
       </div>
     </nav>
   );
