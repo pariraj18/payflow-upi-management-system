@@ -2,25 +2,51 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
-  border-bottom: 1px solid #ddd;
+  padding: 18px 40px;
+  background-color: #0f172a;
+  border-bottom: 1px solid #1e3a8a;
 }
+
+/* PayFlow Logo */
 
 nav h2 {
   margin: 0;
+  color: #60a5fa;
+  font-size: 26px;
+  font-weight: 700;
 }
+
+/* Navigation Links */
 
 nav div {
   display: flex;
+  align-items: center;
   gap: 25px;
 }
 
 nav a {
   text-decoration: none;
-  color: #333;
+  color: #e2e8f0;
   font-weight: 500;
+  transition: 0.2s ease;
 }
 
 nav a:hover {
-  color: #2563eb;
+  color: #60a5fa;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  nav div {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
 }
