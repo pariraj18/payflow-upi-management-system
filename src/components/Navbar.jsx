@@ -1,20 +1,39 @@
-import { Link } from "react-router-dom";
-import "./Navbar.css";
+import { Link, useNavigate } from "react-router-dom";
+import { removeData } from "../utils/storage";
 
 function Navbar() {
-  return (
-    <nav>
-      <h2>PayFlow</h2>
+  const navigate = useNavigate();
 
-      <div>
-        <Link to="/">Home</Link>
-        <Link to="/send-money">Send Money</Link>
-        <Link to="/transactions">Transactions</Link>
-        <Link to="/add-account">Add Account</Link>
-        <Link to="/profile">Profile</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
+  const handleLogout = () => {
+    removeData("payflowLoggedIn");
+    navigate("/login");
+  };
+
+  return (
+    <nav className="navbar">
+
+      <div className="navbar-logo">
+        PayFlow
       </div>
+
+      <div className="navbar-links">
+
+        <Link to="/dashboard">Dashboard</Link>
+
+        <Link to="/send-money">Send Money</Link>
+
+        <Link to="/transactions">Transactions</Link>
+
+        <Link to="/add-account">Add Account</Link>
+
+        <Link to="/profile">Profile</Link>
+
+        <button onClick={handleLogout}>
+          Logout
+        </button>
+
+      </div>
+
     </nav>
   );
 }

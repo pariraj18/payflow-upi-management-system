@@ -3,20 +3,23 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 18px 40px;
-  background-color: #0f172a;
-  border-bottom: 1px solid #1e3a8a;
+
+  /* Different from Dashboard */
+  background-color: #111827;
+
+  border-bottom: 1px solid #1f2937;
 }
 
-/* PayFlow Logo */
+/* Logo */
 
 nav h2 {
   margin: 0;
-  color: #60a5fa;
+  color: #38bdf8;
   font-size: 26px;
   font-weight: 700;
 }
 
-/* Navigation Links */
+/* Links */
 
 nav div {
   display: flex;
@@ -26,13 +29,13 @@ nav div {
 
 nav a {
   text-decoration: none;
-  color: #e2e8f0;
+  color: #e5e7eb;
   font-weight: 500;
   transition: 0.2s ease;
 }
 
 nav a:hover {
-  color: #60a5fa;
+  color: #38bdf8;
 }
 
 /* Mobile */

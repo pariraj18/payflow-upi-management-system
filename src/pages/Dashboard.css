@@ -1,40 +1,56 @@
 .dashboard {
   min-height: calc(100vh - 70px);
   padding: 50px;
+  background-color: #0f172a;
 }
 
+/* =========================
+   Dashboard Heading
+========================= */
+
 .dashboard > h1 {
-  color: #1e3a8a;
+  color: #e0f2fe;
   margin-bottom: 8px;
+  font-size: 32px;
 }
 
 .dashboard > p {
-  color: #64748b;
+  color: #bae6fd;
+  margin-bottom: 0;
 }
 
-/* Balance */
+/* =========================
+   Balance Card
+========================= */
 
 .balance-card {
   margin-top: 30px;
   padding: 30px;
-  background-color: #2563eb;
-  color: white;
+
+  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+  color: #ffffff;
+
   border-radius: 16px;
   width: 350px;
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.25);
 }
 
 .balance-card p {
   margin: 0;
-  opacity: 0.9;
+  color: #dbeafe;
 }
 
 .balance-card h2 {
   margin-top: 12px;
+  margin-bottom: 0;
   font-size: 32px;
+  color: #ffffff;
 }
 
-/* Action Cards */
+/* =========================
+   Action Cards
+========================= */
 
 .action-cards {
   display: flex;
@@ -45,15 +61,17 @@
 .action-card {
   width: 250px;
   padding: 25px;
+
   background-color: #ffffff;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #334155;
   border-radius: 14px;
-  transition: 0.2s;
+
+  transition: 0.2s ease;
 }
 
 .action-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
 .action-card h3 {
@@ -65,24 +83,73 @@
   color: #64748b;
 }
 
+/* =========================
+   Action Buttons
+========================= */
+
 .action-card button {
   background-color: #2563eb;
-  color: white;
+  color: #ffffff;
+
   padding: 9px 18px;
+
   border: none;
   border-radius: 7px;
+
   cursor: pointer;
+  transition: 0.2s ease;
 }
 
 .action-card button:hover {
   background-color: #1e3a8a;
 }
 
-/* Mobile */
+/* =========================
+   Transaction History
+========================= */
+
+.transaction-list {
+  margin-top: 30px;
+  max-width: 800px;
+}
+
+.transaction-card {
+  background-color: #ffffff;
+  color: #1e293b;
+
+  padding: 20px;
+  margin-top: 15px;
+
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border: 1px solid #e2e8f0;
+}
+
+.transaction-card h3 {
+  color: #1e3a8a;
+  margin: 0 0 5px;
+}
+
+.transaction-card p {
+  color: #64748b;
+  margin: 0;
+}
+
+/* =========================
+   Mobile Responsive
+========================= */
 
 @media (max-width: 768px) {
   .dashboard {
-    padding: 25px 15px;
+    padding: 30px 15px;
+  }
+
+  .dashboard > h1 {
+    font-size: 26px;
   }
 
   .balance-card {
@@ -95,5 +162,9 @@
 
   .action-card {
     width: auto;
+  }
+
+  .transaction-card {
+    gap: 15px;
   }
 }

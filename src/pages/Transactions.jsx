@@ -1,34 +1,68 @@
+import { useEffect, useState } from "react";
+import { getData } from "../utils/storage";
+
 function Transactions() {
+  const [transactions, setTransactions] = useState([]);
+
+  useEffect(() => {
+    const user = getData("payflowUser");
+
+    if (user) {
+      setTransactions(user.transactions || []);
+    }
+  }, []);
+
   return (
-    <div className="dashboard">
+    <div className="page-container">
+
       <h1>Transaction History</h1>
-      <p>View your recent payments.</p>
 
-      <div className="transaction-list">
-        <div className="transaction-card">
-          <div>
-            <h3>Rahul</h3>
-            <p>Today, 10:30 AM</p>
-          </div>
+      <p>View your recent transactions</p>
 
-          <div>
-            <h3>- ₹500</h3>
-            <p>Success</p>
-          </div>
-        </div>
+      <div className="transaction-box">
 
-        <div className="transaction-card">
-          <div>
-            <h3>Priya</h3>
-            <p>Yesterday, 5:20 PM</p>
+        {transactions.length === 0 ? (
+          <div className="transaction-card">
+            <p>No transactions yet.</p>
           </div>
+        ) : (
+          transactions
+            .slice()
+            .reverse()
+            .map((transaction) => (
+              <div
+                className="transaction-card"
+                key={transaction.id}
+              >
 
-          <div>
-            <h3>+ ₹1,000</h3>
-            <p>Received</p>
-          </div>
-        </div>
+                <div>
+                  <h3>{transaction.recipient}</h3>
+
+                  <p>
+                    {transaction.date}
+                  </p>
+
+                  {transaction.note && (
+                    <p>{transaction.note}</p>
+                  )}
+                </div>
+
+                <div>
+                  <h3 className="money-sent">
+                    - ₹{transaction.amount}
+                  </h3>
+
+                  <p className="success-text">
+                    {transaction.status}
+                  </p>
+                </div>
+
+              </div>
+            ))
+        )}
+
       </div>
+
     </div>
   );
 }
