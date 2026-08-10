@@ -48,7 +48,7 @@ function SendMoney() {
       amount: sendAmount,
       note: note,
       date: new Date().toLocaleString(),
-      status: "Success"
+      status: "Offline Pending"
     };
 
     // Add transaction to history

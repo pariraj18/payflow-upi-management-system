@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getData, saveData } from "../utils/storage";
@@ -40,46 +39,50 @@ function Login() {
   return (
     <div className="auth-container">
 
-      <h1>Welcome Back 👋</h1>
+      <div className="auth-card">
 
-      <p>Login to your PayFlow account</p>
+        <h1>Welcome Back 👋</h1>
 
-      <form onSubmit={handleLogin}>
+        <p>Login to your PayFlow account</p>
 
-        <div>
-          <label>Email</label>
+        <form onSubmit={handleLogin}>
 
-          <input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
+          <div>
+            <label>Email</label>
 
-        <div>
-          <label>Password</label>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
 
-          <input
-            type="password"
-            placeholder="Enter your password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
+          <div>
+            <label>Password</label>
 
-        <button type="submit">
-          Login
-        </button>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
 
-      </form>
+          <button type="submit">
+            Login
+          </button>
 
-      <p>
-        Don't have an account?{" "}
-        <Link to="/register">
-          Register
-        </Link>
-      </p>
+        </form>
+
+        <p>
+          Don't have an account?{" "}
+          <Link to="/register">
+            Register
+          </Link>
+        </p>
+
+      </div>
 
     </div>
   );

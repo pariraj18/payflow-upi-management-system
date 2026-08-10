@@ -13,8 +13,21 @@ function Register() {
   const handleRegister = (e) => {
     e.preventDefault();
 
-    if (!name || !email || !password || !confirmPassword) {
+    const cleanName = name.trim();
+    const cleanEmail = email.trim().toLowerCase();
+
+    if (
+      !cleanName ||
+      !cleanEmail ||
+      !password ||
+      !confirmPassword
+    ) {
       alert("Please fill all fields");
+      return;
+    }
+
+    if (password.length < 6) {
+      alert("Password must be at least 6 characters");
       return;
     }
 
@@ -24,9 +37,9 @@ function Register() {
     }
 
     const user = {
-      name,
-      email,
-      password,
+      name: cleanName,
+      email: cleanEmail,
+      password: password,
       balance: 10000,
       bankAccount: null,
       transactions: []
@@ -42,68 +55,97 @@ function Register() {
   return (
     <div className="auth-container">
 
-      <h1>Create Account</h1>
+      <div className="auth-card">
 
-      <p>Create your PayFlow account</p>
+        <h1>Create Account</h1>
 
-      <form onSubmit={handleRegister}>
+        <p>Create your PayFlow account</p>
 
-        <div>
-          <label>Name</label>
+        <form onSubmit={handleRegister}>
 
-          <input
-            type="text"
-            placeholder="Enter your name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
+          {/* Name */}
 
-        <div>
-          <label>Email</label>
+          <div>
+            <label>Name</label>
 
-          <input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
+            <input
+              type="text"
+              placeholder="Enter your name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
 
-        <div>
-          <label>Password</label>
 
-          <input
-            type="password"
-            placeholder="Create a password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
+          {/* Email */}
 
-        <div>
-          <label>Confirm Password</label>
+          <div>
+            <label>Email</label>
 
-          <input
-            type="password"
-            placeholder="Confirm your password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-        </div>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
 
-        <button type="submit">
-          Create Account
-        </button>
 
-      </form>
+          {/* Password */}
 
-      <p>
-        Already have an account?{" "}
-        <Link to="/login">
-          Login
-        </Link>
-      </p>
+          <div>
+            <label>Password</label>
+
+            <input
+              type="password"
+              placeholder="Create a password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              minLength={6}
+              required
+            />
+          </div>
+
+
+          {/* Confirm Password */}
+
+          <div>
+            <label>Confirm Password</label>
+
+            <input
+              type="password"
+              placeholder="Confirm your password"
+              value={confirmPassword}
+              onChange={(e) =>
+                setConfirmPassword(e.target.value)
+              }
+              minLength={6}
+              required
+            />
+          </div>
+
+
+          {/* Button */}
+
+          <button type="submit">
+            Create Account
+          </button>
+
+        </form>
+
+
+        {/* Login */}
+
+        <p>
+          Already have an account?{" "}
+          <Link to="/login">
+            Login
+          </Link>
+        </p>
+
+      </div>
 
     </div>
   );
