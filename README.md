@@ -2,13 +2,7 @@
 
 <p align="center">
 
-<img src="https://img.shields.io/badge/PayFlow-Offline%20Payment%20Simulator-2563EB?style=for-the-badge&logo=wallet&logoColor=white"/>
 
-<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
-
-<img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"/>
-
-<img src="https://img.shields.io/badge/PWA-Offline%20Ready-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white"/>
 
 </p>
 
@@ -28,7 +22,7 @@
 ## ✨ Project Preview
 
 <p align="center">
-  <img src="./screenshots/dashboard.png" width="850"/>
+  <img src="./screenshots/Dashboard.jpg" width="850"/>
 </p>
 
 <p align="center">
@@ -181,7 +175,7 @@ Payflow/
 │   ├── package.json
 │   └── index.html
 │
-├── Screenshots/
+├── screenshots/
 │   ├── dashboard.png
 │   ├── send-money.png
 │   ├── transactions.png
