@@ -273,3 +273,4 @@ It does not perform real:
 - Financial transactions
 
 All current user and transaction data is stored locally in the browser using **LocalStorage**.
+Thankyou for viewing my project.
