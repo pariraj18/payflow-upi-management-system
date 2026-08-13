@@ -2,10 +2,11 @@
 
 <p align="center">
 
-
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
+<img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"/>
+<img src="https://img.shields.io/badge/PWA-Offline%20Ready-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white"/>
 
 </p>
-
 <p align="center">
   <b>⚡ An Offline-First Payment Simulator built with React + Vite</b>
 </p>
@@ -27,6 +28,18 @@
 
 <p align="center">
   <b>🚀 PayFlow Dashboard</b>
+</p>
+
+---
+
+## 🚀 Live Demo
+
+<p align="center">
+
+<a href="https://payflow-upi-management-system.vercel.app">
+  <b>🌐 Open PayFlow Live</b>
+</a>
+
 </p>
 
 ---
@@ -121,25 +134,7 @@ PayFlow uses **LocalStorage** for local data persistence and **Progressive Web A
 ### 🏠 Dashboard
 
 <p align="center">
-  <img src="./screenshots/dashboard.png" width="850"/>
-</p>
-
-### 💸 Send Money
-
-<p align="center">
-  <img src="./screenshots/send-money.png" width="850"/>
-</p>
-
-### 📊 Transactions
-
-<p align="center">
-  <img src="./screenshots/transactions.png" width="850"/>
-</p>
-
-### 👤 Profile
-
-<p align="center">
-  <img src="./screenshots/profile.png" width="850"/>
+  <img src="./screenshots/Dashboard.jpg" width="850"/>
 </p>
 
 ---
